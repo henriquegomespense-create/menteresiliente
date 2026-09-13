@@ -41,9 +41,9 @@ function initCyberCanvas() {
       this.y = Math.random() * height;
       this.vx = (Math.random() - 0.5) * 0.6;
       this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 1.8 + 0.8;
+      this.radius = Math.random() * 2.0 + 0.8;
       this.baseColor = Math.random() > 0.4 ? 'rgba(0, 245, 160, ' : 'rgba(0, 217, 245, ';
-      this.alpha = Math.random() * 0.5 + 0.2;
+      this.alpha = Math.random() * 0.5 + 0.25;
       this.pulseSpeed = Math.random() * 0.02 + 0.01;
       this.pulseVal = Math.random() * Math.PI;
     }
@@ -74,7 +74,7 @@ function initCyberCanvas() {
       const currentAlpha = this.alpha + Math.sin(this.pulseVal) * 0.15;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `${this.baseColor}${Math.max(0.1, currentAlpha)})`;
+      ctx.fillStyle = `${this.baseColor}${Math.max(0.15, currentAlpha)})`;
       ctx.shadowBlur = 8;
       ctx.shadowColor = '#00f5a0';
       ctx.fill();

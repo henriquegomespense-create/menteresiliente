@@ -1,14 +1,17 @@
 /* ==========================================================================
-   MENTE RESILIENTE - DESIGN SYSTEM & FUTURISTIC CYBER-GLASS STYLES
+   MENTE RESILIENTE - DESIGN SYSTEM & LIGHT-TECH CONTRAST BIO-HUB
    ========================================================================== */
 
 :root {
-  /* Core Color Palette */
-  --bg-primary: #06080d;
-  --bg-secondary: #0b0f19;
-  --bg-card: rgba(13, 19, 33, 0.72);
-  --bg-card-hover: rgba(19, 28, 48, 0.88);
-  --bg-card-active: rgba(26, 38, 64, 0.95);
+  /* Brand Official Background (#243b4a) */
+  --bg-page: #243b4a;
+  --bg-page-dark: #192d3b;
+  
+  /* Central Body & Deep Obsidian-Teal Glass Cards */
+  --bg-card: rgba(13, 22, 30, 0.88);
+  --bg-card-hover: rgba(18, 30, 42, 0.96);
+  --bg-card-active: rgba(24, 38, 54, 1);
+  --bg-header-bar: rgba(13, 22, 30, 0.82);
   
   /* Cyber Accent & Neon Glows */
   --neon-emerald: #00f5a0;
@@ -22,38 +25,34 @@
   --grad-emerald-cyan: linear-gradient(135deg, #00f5a0 0%, #00d9f5 100%);
   --grad-gold-amber: linear-gradient(135deg, #ffd166 0%, #f59e0b 100%);
   --grad-violet-cyan: linear-gradient(135deg, #8b5cf6 0%, #00d9f5 100%);
-  --grad-card-border: linear-gradient(135deg, rgba(0, 245, 160, 0.35), rgba(0, 217, 245, 0.15), rgba(139, 92, 246, 0.25));
   --grad-hero-border: linear-gradient(135deg, #00f5a0, #00d9f5, #8b5cf6, #ffd166);
-  --grad-glow: radial-gradient(circle at center, rgba(0, 245, 160, 0.15) 0%, transparent 70%);
+  --grad-card-border: linear-gradient(135deg, rgba(0, 245, 160, 0.35), rgba(0, 217, 245, 0.15), rgba(139, 92, 246, 0.25));
 
   /* Text Colors */
   --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-accent: #00f5a0;
-  --text-gold: #ffd166;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dark: #ffffff;
+  --text-dark-muted: #cbd5e1;
 
   /* Typography */
   --font-heading: 'Outfit', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Glassmorphism & Borders */
-  --glass-blur: blur(16px);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-  --glass-border-glow: 1px solid rgba(0, 245, 160, 0.3);
+  --glass-blur: blur(20px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+  --glass-border-glow: 1px solid rgba(0, 245, 160, 0.4);
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  /* Prominent Floating Drop Shadows */
+  --shadow-floating: 0 20px 45px -10px rgba(7, 12, 18, 0.65), 0 8px 20px -4px rgba(7, 12, 18, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-card-hover: 0 26px 55px -10px rgba(7, 12, 18, 0.8), 0 0 24px rgba(0, 245, 160, 0.25);
   --shadow-glow-emerald: 0 0 25px rgba(0, 245, 160, 0.35);
-  --shadow-glow-cyan: 0 0 25px rgba(0, 217, 245, 0.35);
-  --shadow-glow-gold: 0 0 25px rgba(255, 209, 102, 0.35);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,7 +79,14 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
+  background-color: #243b4a;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 245, 160, 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 217, 245, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(15, 26, 34, 0.7) 0px, transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
@@ -89,13 +95,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 24px 16px 80px;
-}
-
-/* Selection */
-::selection {
-  background: rgba(0, 245, 160, 0.3);
-  color: #ffffff;
+  padding: 32px 16px 80px;
 }
 
 /* Custom Scrollbar */
@@ -103,10 +103,10 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: #192d3b;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 245, 160, 0.35);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -114,7 +114,7 @@ body {
 }
 
 /* ==========================================================================
-   CYBER BACKGROUND CANVAS & AMBIENT ORBS
+   CYBER BACKGROUND CANVAS & AMBIENT GLOWS
    ========================================================================== */
 #cyber-canvas {
   position: fixed;
@@ -129,27 +129,27 @@ body {
 .ambient-glow {
   position: fixed;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(140px);
   z-index: 0;
   pointer-events: none;
-  opacity: 0.45;
+  opacity: 0.55;
   animation: floatOrb 18s ease-in-out infinite alternate;
 }
 
 .ambient-glow.top-left {
   top: -10%;
   left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 245, 160, 0.25) 0%, transparent 70%);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(0, 245, 160, 0.3) 0%, transparent 70%);
 }
 
 .ambient-glow.bottom-right {
   bottom: -15%;
   right: -10%;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 217, 245, 0.25) 0%, transparent 70%);
   animation-duration: 22s;
   animation-delay: -5s;
 }
@@ -158,9 +158,9 @@ body {
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 217, 245, 0.12) 0%, transparent 70%);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
   animation-duration: 15s;
   animation-delay: -8s;
 }
@@ -172,7 +172,7 @@ body {
 }
 
 /* ==========================================================================
-   APP CONTAINER (MOBILE-FIRST BIO LINK STRUCTURE)
+   APP CONTAINER (HIGH CONTRAST FLOATING HUB)
    ========================================================================== */
 .app-container {
   width: 100%;
@@ -185,18 +185,19 @@ body {
 }
 
 /* ==========================================================================
-   HEADER ACTIONS BAR (Share, Sound Toggle, QR)
+   HEADER ACTIONS BAR
    ========================================================================== */
 .header-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: rgba(13, 19, 33, 0.4);
+  background: var(--bg-header-bar);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
 }
 
 .status-pill {
@@ -204,8 +205,8 @@ body {
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  background: rgba(0, 245, 160, 0.1);
-  border: 1px solid rgba(0, 245, 160, 0.3);
+  background: rgba(0, 245, 160, 0.12);
+  border: 1px solid rgba(0, 245, 160, 0.35);
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 700;
@@ -246,9 +247,9 @@ body {
 }
 
 .icon-btn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -260,11 +261,11 @@ body {
 }
 
 .icon-btn:hover {
-  background: rgba(0, 245, 160, 0.15);
+  background: rgba(0, 245, 160, 0.2);
   border-color: var(--neon-emerald);
-  color: var(--text-primary);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(0, 245, 160, 0.3);
+  box-shadow: 0 0 12px rgba(0, 245, 160, 0.35);
 }
 
 .icon-btn svg {
@@ -274,20 +275,20 @@ body {
 }
 
 /* ==========================================================================
-   PROFILE HERO SECTION
+   PROFILE HERO SECTION (FLOATING OBSIDIAN CARD)
    ========================================================================== */
 .profile-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 24px 20px 16px;
+  padding: 28px 24px 20px;
   background: var(--bg-card);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-floating);
   position: relative;
   overflow: hidden;
 }
@@ -302,7 +303,7 @@ body {
   background: var(--grad-emerald-cyan);
 }
 
-/* Holographic Avatar with Rotating Cyber Ring */
+/* Holographic Avatar */
 .avatar-container {
   position: relative;
   width: 132px;
@@ -319,7 +320,7 @@ body {
   border-radius: 50%;
   background: conic-gradient(from 0deg, transparent 0%, #00f5a0 30%, transparent 60%, #00d9f5 85%, transparent 100%);
   animation: rotateRing 8s linear infinite;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .cyber-ring-inner {
@@ -328,7 +329,7 @@ body {
   border-radius: 50%;
   background: conic-gradient(from 180deg, transparent 0%, #ffd166 35%, transparent 70%, #8b5cf6 90%, transparent 100%);
   animation: rotateRingRev 12s linear infinite;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 @keyframes rotateRing {
@@ -369,12 +370,12 @@ body {
   right: 4px;
   width: 28px;
   height: 28px;
-  background: var(--bg-primary);
+  background: #06080d;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .verified-badge svg {
@@ -383,10 +384,10 @@ body {
   color: var(--neon-cyan);
 }
 
-/* Brand Titles */
+/* Brand Typography */
 .brand-name {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #ffffff 30%, #a7f3d0 100%);
@@ -405,10 +406,10 @@ body {
   color: #38bdf8;
   letter-spacing: 0.04em;
   margin-bottom: 8px;
-  background: rgba(56, 189, 248, 0.1);
-  padding: 2px 12px;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 3px 14px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   display: inline-block;
 }
 
@@ -423,8 +424,6 @@ body {
   letter-spacing: 0.08em;
   margin-bottom: 12px;
 }
-  margin-bottom: 12px;
-}
 
 .brand-tagline span.sep {
   color: var(--text-muted);
@@ -433,15 +432,15 @@ body {
 
 .brand-bio {
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   max-width: 520px;
   margin: 0 auto 18px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .brand-bio strong {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Value Pillars Chips */
@@ -450,7 +449,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .chip {
@@ -458,8 +457,8 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
@@ -468,8 +467,8 @@ body {
 }
 
 .chip:hover {
-  background: rgba(0, 245, 160, 0.08);
-  border-color: rgba(0, 245, 160, 0.3);
+  background: rgba(0, 245, 160, 0.12);
+  border-color: rgba(0, 245, 160, 0.35);
   color: var(--neon-emerald);
 }
 
@@ -479,14 +478,14 @@ body {
   color: var(--neon-emerald);
 }
 
-/* Quick Metrics Strip */
+/* Metrics Strip */
 .metrics-strip {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .metric-item {
@@ -497,7 +496,7 @@ body {
 
 .metric-num {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #ffffff;
   background: var(--grad-emerald-cyan);
@@ -507,14 +506,14 @@ body {
 
 .metric-label {
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
 }
 
 /* ==========================================================================
-   CATEGORY TABS (FILTERING SYSTEM)
+   CATEGORY TABS (FILTERING)
    ========================================================================== */
 .category-tabs {
   display: flex;
@@ -531,34 +530,36 @@ body {
 
 .tab-btn {
   flex-shrink: 0;
-  padding: 8px 16px;
-  background: rgba(13, 19, 33, 0.6);
+  padding: 9px 18px;
+  background: rgba(10, 16, 30, 0.85);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-full);
-  color: var(--text-secondary);
+  color: #cbd5e1;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
   transition: var(--transition-smooth);
 }
 
 .tab-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(16, 24, 44, 0.98);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
 }
 
 .tab-btn.active {
   background: var(--grad-emerald-cyan);
   color: #06080d;
-  font-weight: 700;
+  font-weight: 800;
   border-color: transparent;
-  box-shadow: 0 4px 16px rgba(0, 245, 160, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 245, 160, 0.45);
 }
 
 /* ==========================================================================
@@ -581,7 +582,7 @@ body {
   border: var(--glass-border);
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-floating);
   transition: all var(--transition-smooth);
   overflow: hidden;
   cursor: pointer;
@@ -594,7 +595,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
   transition: left 0.6s ease;
 }
 
@@ -605,15 +606,14 @@ body {
 .cyber-card:hover {
   transform: translateY(-4px);
   background: var(--bg-card-hover);
-  border-color: rgba(0, 245, 160, 0.4);
-  box-shadow: var(--shadow-md), 0 0 20px rgba(0, 245, 160, 0.15);
+  border-color: rgba(0, 245, 160, 0.45);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .cyber-card:active {
   transform: translateY(-1px);
 }
 
-/* Hidden state for filter */
 .cyber-card.hidden {
   display: none !important;
 }
@@ -622,9 +622,8 @@ body {
    HERO / FEATURED PRODUCT CARD ("7 Dias de Rotinas Poderosas")
    ========================================================================== */
 .hero-product-card {
-  background: linear-gradient(145deg, rgba(13, 25, 38, 0.85) 0%, rgba(8, 14, 24, 0.95) 100%);
-  border: 1px solid rgba(0, 245, 160, 0.4);
-  box-shadow: 0 8px 32px rgba(0, 245, 160, 0.18), var(--shadow-md);
+  background: linear-gradient(145deg, rgba(12, 22, 38, 0.96) 0%, rgba(8, 14, 26, 0.98) 100%);
+  border: 1px solid rgba(0, 245, 160, 0.45);
   position: relative;
 }
 
@@ -639,7 +638,7 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.85;
   animation: borderShimmer 6s linear infinite;
 }
 
@@ -670,24 +669,24 @@ body {
 .badge-featured {
   background: var(--grad-emerald-cyan);
   color: #06080d;
-  box-shadow: 0 0 12px rgba(0, 245, 160, 0.4);
+  box-shadow: 0 0 12px rgba(0, 245, 160, 0.45);
 }
 
 .badge-gold {
   background: var(--grad-gold-amber);
   color: #06080d;
-  box-shadow: 0 0 12px rgba(255, 209, 102, 0.4);
+  box-shadow: 0 0 12px rgba(255, 209, 102, 0.45);
 }
 
 .badge-violet {
-  background: rgba(139, 92, 246, 0.2);
-  border: 1px solid rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(139, 92, 246, 0.45);
   color: #c4b5fd;
 }
 
 .badge-cyan {
-  background: rgba(0, 217, 245, 0.15);
-  border: 1px solid rgba(0, 217, 245, 0.4);
+  background: rgba(0, 217, 245, 0.2);
+  border: 1px solid rgba(0, 217, 245, 0.45);
   color: var(--neon-cyan);
 }
 
@@ -720,8 +719,8 @@ body {
   aspect-ratio: 1/1;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .product-cover-img {
@@ -751,7 +750,7 @@ body {
 
 .product-desc {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   line-height: 1.45;
   margin-bottom: 12px;
 }
@@ -779,7 +778,6 @@ body {
   flex-shrink: 0;
 }
 
-/* CTA Button Inside Card */
 .card-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -796,7 +794,7 @@ body {
   letter-spacing: 0.05em;
   border-radius: var(--radius-md);
   border: none;
-  box-shadow: 0 4px 16px rgba(0, 245, 160, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 245, 160, 0.45);
   transition: all var(--transition-smooth);
 }
 
@@ -807,7 +805,7 @@ body {
 }
 
 .hero-product-card:hover .card-cta-btn {
-  box-shadow: 0 6px 24px rgba(0, 245, 160, 0.6);
+  box-shadow: 0 6px 24px rgba(0, 245, 160, 0.65);
   filter: brightness(1.05);
 }
 
@@ -816,7 +814,7 @@ body {
 }
 
 /* ==========================================================================
-   STANDARD CYBER LINKS (Substack, TikTok, Mentoria)
+   STANDARD CYBER LINKS
    ========================================================================== */
 .standard-card {
   display: flex;
@@ -841,33 +839,27 @@ body {
 }
 
 .icon-substack {
-  background: rgba(255, 103, 25, 0.15);
-  border: 1px solid rgba(255, 103, 25, 0.35);
+  background: rgba(255, 103, 25, 0.18);
+  border: 1px solid rgba(255, 103, 25, 0.4);
   color: #ff6719;
 }
 
 .icon-tiktok {
-  background: rgba(0, 242, 234, 0.12);
-  border: 1px solid rgba(254, 44, 85, 0.35);
+  background: rgba(0, 242, 234, 0.15);
+  border: 1px solid rgba(254, 44, 85, 0.4);
   color: #ffffff;
 }
 
 .icon-whatsapp {
-  background: rgba(37, 211, 102, 0.15);
-  border: 1px solid rgba(37, 211, 102, 0.4);
+  background: rgba(37, 211, 102, 0.18);
+  border: 1px solid rgba(37, 211, 102, 0.45);
   color: #25d366;
 }
 
 .icon-course {
-  background: rgba(139, 92, 246, 0.15);
-  border: 1px solid rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.45);
   color: var(--neon-violet);
-}
-
-.icon-calc {
-  background: rgba(255, 209, 102, 0.15);
-  border: 1px solid rgba(255, 209, 102, 0.4);
-  color: var(--neon-gold);
 }
 
 .card-icon-wrapper svg {
@@ -901,7 +893,7 @@ body {
 
 .card-subtitle {
   font-size: 0.825rem;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -913,12 +905,12 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: #94a3b8;
   flex-shrink: 0;
   transition: all var(--transition-fast);
 }
@@ -933,134 +925,11 @@ body {
   background: var(--neon-emerald);
   border-color: var(--neon-emerald);
   color: #06080d;
-  box-shadow: 0 0 12px rgba(0, 245, 160, 0.5);
+  box-shadow: 0 0 14px rgba(0, 245, 160, 0.55);
 }
 
 .standard-card:hover .card-action-arrow svg {
   transform: translate(2px, -2px);
-}
-
-/* ==========================================================================
-   INTERACTIVE TOOLS: CALCULADORA DE LIBERDADE FINANCEIRA
-   ========================================================================== */
-.interactive-widget-box {
-  background: linear-gradient(145deg, rgba(17, 24, 39, 0.8) 0%, rgba(11, 15, 25, 0.95) 100%);
-  border: 1px solid rgba(255, 209, 102, 0.3);
-  border-radius: var(--radius-lg);
-  padding: 22px;
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.widget-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.widget-header svg {
-  width: 28px;
-  height: 28px;
-  color: var(--neon-gold);
-}
-
-.widget-title {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-.widget-subtitle {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
-.calc-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.calc-slider-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.calc-label-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #e2e8f0;
-}
-
-.calc-value-badge {
-  color: var(--neon-emerald);
-  font-weight: 800;
-}
-
-.cyber-range {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  outline: none;
-}
-
-.cyber-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--neon-emerald);
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 245, 160, 0.8);
-  border: 2px solid #06080d;
-  transition: transform var(--transition-fast);
-}
-
-.cyber-range::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-}
-
-.calc-result-box {
-  background: rgba(6, 8, 13, 0.85);
-  border: 1px solid rgba(0, 245, 160, 0.3);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.calc-result-title {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-  font-weight: 700;
-}
-
-.calc-result-value {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 900;
-  color: var(--neon-emerald);
-  text-shadow: 0 0 15px rgba(0, 245, 160, 0.4);
-  margin-bottom: 4px;
-}
-
-.calc-result-subtext {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
 }
 
 /* ==========================================================================
@@ -1070,16 +939,17 @@ body {
   background: var(--bg-card);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(0, 217, 245, 0.3);
+  border: 1px solid rgba(0, 217, 245, 0.35);
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 24px;
   text-align: center;
+  box-shadow: var(--shadow-floating);
   position: relative;
 }
 
 .newsletter-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 6px;
@@ -1087,7 +957,7 @@ body {
 
 .newsletter-desc {
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   margin-bottom: 16px;
 }
 
@@ -1098,8 +968,8 @@ body {
 
 .newsletter-input {
   flex: 1;
-  background: rgba(6, 8, 13, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(6, 8, 13, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-md);
   padding: 12px 16px;
   color: #ffffff;
@@ -1110,7 +980,7 @@ body {
 
 .newsletter-input:focus {
   border-color: var(--neon-cyan);
-  box-shadow: 0 0 12px rgba(0, 217, 245, 0.3);
+  box-shadow: 0 0 12px rgba(0, 217, 245, 0.35);
 }
 
 .newsletter-btn {
@@ -1130,11 +1000,11 @@ body {
 
 .newsletter-btn:hover {
   filter: brightness(1.15);
-  box-shadow: 0 0 16px rgba(0, 217, 245, 0.4);
+  box-shadow: 0 0 16px rgba(0, 217, 245, 0.45);
 }
 
 /* ==========================================================================
-   SOCIAL FOOTER DOCK & COPYRIGHT
+   SOCIAL FOOTER DOCK & COPYRIGHT (FOR LIGHT BACKGROUND)
    ========================================================================== */
 .footer-section {
   display: flex;
@@ -1152,25 +1022,26 @@ body {
 }
 
 .social-dock-btn {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: rgba(13, 19, 33, 0.7);
-  border: var(--glass-border);
+  background: rgba(10, 16, 30, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
   transition: all var(--transition-smooth);
 }
 
 .social-dock-btn:hover {
   color: #ffffff;
   transform: translateY(-4px) scale(1.1);
-  background: rgba(0, 245, 160, 0.15);
+  background: rgba(0, 245, 160, 0.25);
   border-color: var(--neon-emerald);
-  box-shadow: 0 0 16px rgba(0, 245, 160, 0.4);
+  box-shadow: 0 0 16px rgba(0, 245, 160, 0.45);
 }
 
 .social-dock-btn svg {
@@ -1180,12 +1051,16 @@ body {
 }
 
 .footer-copy {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  color: var(--text-dark-muted);
+}
+
+.footer-copy strong {
+  color: var(--text-dark);
 }
 
 .footer-copy a {
-  color: var(--neon-emerald);
+  color: #0284c7;
   text-decoration: none;
 }
 
@@ -1195,7 +1070,7 @@ body {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
@@ -1216,10 +1091,10 @@ body {
   width: 100%;
   max-width: 420px;
   background: #0d121d;
-  border: 1px solid rgba(0, 245, 160, 0.3);
+  border: 1px solid rgba(0, 245, 160, 0.35);
   border-radius: var(--radius-xl);
   padding: 24px;
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 245, 160, 0.2);
+  box-shadow: var(--shadow-floating), 0 0 30px rgba(0, 245, 160, 0.25);
   transform: scale(0.92);
   transition: transform var(--transition-bounce);
   position: relative;
@@ -1283,8 +1158,8 @@ body {
 
 .share-input {
   flex: 1;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   padding: 10px 14px;
   color: #e2e8f0;
@@ -1320,7 +1195,7 @@ body {
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 245, 160, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   z-index: 2000;
   opacity: 0;
   transition: all var(--transition-bounce);
@@ -1335,11 +1210,11 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (MOBILE & TABLET OPTIMIZATIONS)
+   RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
 @media (max-width: 580px) {
   body {
-    padding: 12px 10px 60px;
+    padding: 16px 10px 60px;
   }
 
   .app-container {
@@ -1347,18 +1222,18 @@ body {
   }
 
   .profile-hero {
-    padding: 18px 14px 14px;
+    padding: 20px 14px 16px;
     border-radius: var(--radius-lg);
   }
 
   .avatar-container {
-    width: 100px;
-    height: 100px;
+    width: 112px;
+    height: 112px;
     margin-bottom: 14px;
   }
 
   .brand-name {
-    font-size: 1.6rem;
+    font-size: 1.65rem;
   }
 
   .brand-bio {
@@ -1389,8 +1264,8 @@ body {
   }
 
   .card-icon-wrapper {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
   }
 
   .card-icon-wrapper svg {
