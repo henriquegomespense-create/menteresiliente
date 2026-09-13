@@ -178,7 +178,7 @@ function initAudioFeedback() {
   }
 
   // Adicionar sons em botões e cards interativos
-  document.querySelectorAll('.cyber-card, .tab-btn, .icon-btn, .card-cta-btn, .newsletter-btn').forEach(elem => {
+  document.querySelectorAll('.cyber-card, .tab-btn, .icon-btn, .card-cta-btn, .newsletter-btn, .floating-whatsapp-btn, .social-dock-btn').forEach(elem => {
     elem.addEventListener('mouseenter', () => {
       if (soundEnabled) playSynthBeep(520, 'triangle', 0.03, 0.03);
     });
