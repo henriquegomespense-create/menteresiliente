@@ -1,63 +1,63 @@
 /* ==========================================================================
-   MENTE RESILIENTE - DESIGN SYSTEM & LIGHT-TECH CONTRAST BIO-HUB
+   MENTE RESILIENTE - DESIGN SYSTEM & CLEAN HIGH-CONTRAST BIO-HUB
    ========================================================================== */
 
 :root {
-  /* Brand Official Background (#243b4a) */
-  --bg-page: #243b4a;
-  --bg-page-dark: #192d3b;
-  
-  /* Central Body & Deep Obsidian-Teal Glass Cards */
-  --bg-card: rgba(13, 22, 30, 0.88);
-  --bg-card-hover: rgba(18, 30, 42, 0.96);
-  --bg-card-active: rgba(24, 38, 54, 1);
-  --bg-header-bar: rgba(13, 22, 30, 0.82);
-  
-  /* Cyber Accent & Neon Glows */
-  --neon-emerald: #00f5a0;
-  --neon-cyan: #00d9f5;
-  --neon-gold: #ffd166;
-  --neon-amber: #f59e0b;
-  --neon-violet: #8b5cf6;
-  --neon-pink: #ec4899;
-  
+  /* Brand Theme Colors */
+  --bg-page: #0d151d;
+  --bg-page-gradient: radial-gradient(at 50% 0%, #182635 0%, #0d151d 85%);
+  --bg-card: #131f2b;
+  --bg-card-hover: #182838;
+  --bg-card-active: #1e3144;
+  --bg-header-bar: rgba(19, 31, 43, 0.92);
+
+  /* Primary Palette */
+  --color-emerald: #10b981;
+  --color-emerald-light: #34d399;
+  --color-teal: #14b8a6;
+  --color-cyan: #0ea5e9;
+  --color-blue: #3b82f6;
+  --color-amber: #f59e0b;
+  --color-gold: #fbbf24;
+  --color-violet: #8b5cf6;
+  --color-indigo: #6366f1;
+
   /* Gradients */
-  --grad-emerald-cyan: linear-gradient(135deg, #00f5a0 0%, #00d9f5 100%);
-  --grad-gold-amber: linear-gradient(135deg, #ffd166 0%, #f59e0b 100%);
-  --grad-violet-cyan: linear-gradient(135deg, #8b5cf6 0%, #00d9f5 100%);
-  --grad-hero-border: linear-gradient(135deg, #00f5a0, #00d9f5, #8b5cf6, #ffd166);
-  --grad-card-border: linear-gradient(135deg, rgba(0, 245, 160, 0.35), rgba(0, 217, 245, 0.15), rgba(139, 92, 246, 0.25));
+  --grad-emerald-teal: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+  --grad-amber-gold: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --grad-blue-cyan: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+  --grad-violet-indigo: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
 
   /* Text Colors */
   --text-primary: #ffffff;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
   --text-dark: #ffffff;
-  --text-dark-muted: #cbd5e1;
+  --text-dark-muted: #94a3b8;
 
   /* Typography */
-  --font-heading: 'Outfit', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Glassmorphism & Borders */
-  --glass-blur: blur(20px);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
-  --glass-border-glow: 1px solid rgba(0, 245, 160, 0.4);
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
+  /* Borders & Radii */
+  --glass-blur: blur(16px);
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.1);
+  --border-hover: 1px solid rgba(255, 255, 255, 0.22);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
-  /* Prominent Floating Drop Shadows */
-  --shadow-floating: 0 20px 45px -10px rgba(7, 12, 18, 0.65), 0 8px 20px -4px rgba(7, 12, 18, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  --shadow-card-hover: 0 26px 55px -10px rgba(7, 12, 18, 0.8), 0 0 24px rgba(0, 245, 160, 0.25);
-  --shadow-glow-emerald: 0 0 25px rgba(0, 245, 160, 0.35);
+  /* Shadows (Clean & Depth-focused, No Neon Glowing) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 14px 32px rgba(0, 0, 0, 0.45);
+  --shadow-floating: 0 16px 36px -6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
@@ -79,14 +79,9 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: #243b4a;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(0, 245, 160, 0.2) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(0, 217, 245, 0.25) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(15, 26, 34, 0.7) 0px, transparent 65%),
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+  background-color: var(--bg-page);
+  background-image: var(--bg-page-gradient);
+  background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
@@ -103,76 +98,18 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #192d3b;
+  background: #0d151d;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 245, 160, 0.35);
+  background: #1e2e3d;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neon-emerald);
+  background: #2b3f52;
 }
 
 /* ==========================================================================
-   CYBER BACKGROUND CANVAS & AMBIENT GLOWS
-   ========================================================================== */
-#cyber-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.ambient-glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(140px);
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.55;
-  animation: floatOrb 18s ease-in-out infinite alternate;
-}
-
-.ambient-glow.top-left {
-  top: -10%;
-  left: -10%;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(0, 245, 160, 0.3) 0%, transparent 70%);
-}
-
-.ambient-glow.bottom-right {
-  bottom: -15%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 217, 245, 0.25) 0%, transparent 70%);
-  animation-duration: 22s;
-  animation-delay: -5s;
-}
-
-.ambient-glow.center-glow {
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-  animation-duration: 15s;
-  animation-delay: -8s;
-}
-
-@keyframes floatOrb {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(40px, -30px) scale(1.1); }
-  100% { transform: translate(-30px, 40px) scale(0.95); }
-}
-
-/* ==========================================================================
-   APP CONTAINER (HIGH CONTRAST FLOATING HUB)
+   APP CONTAINER
    ========================================================================== */
 .app-container {
   width: 100%;
@@ -191,13 +128,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
+  padding: 8px 14px;
   background: var(--bg-header-bar);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
+  border: var(--border-subtle);
   border-radius: var(--radius-full);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
+  box-shadow: var(--shadow-sm);
 }
 
 .status-pill {
@@ -205,13 +142,13 @@ body {
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  background: rgba(0, 245, 160, 0.12);
-  border: 1px solid rgba(0, 245, 160, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--neon-emerald);
-  letter-spacing: 0.05em;
+  color: var(--color-emerald-light);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -219,25 +156,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--neon-emerald);
-  position: relative;
-}
-
-.status-indicator::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 50%;
-  border: 2px solid var(--neon-emerald);
-  animation: pulseRing 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-}
-
-@keyframes pulseRing {
-  0% { transform: scale(0.8); opacity: 1; }
-  100% { transform: scale(2.2); opacity: 0; }
+  background-color: var(--color-emerald);
 }
 
 .action-buttons-group {
@@ -247,11 +166,11 @@ body {
 }
 
 .icon-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #cbd5e1;
-  width: 38px;
-  height: 38px;
+  background: rgba(255, 255, 255, 0.06);
+  border: var(--border-subtle);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -262,32 +181,30 @@ body {
 }
 
 .icon-btn:hover {
-  background: rgba(0, 245, 160, 0.2);
-  border-color: var(--neon-emerald);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(0, 245, 160, 0.35);
+  transform: translateY(-1px);
 }
 
 .icon-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
-   PROFILE HERO SECTION (FLOATING OBSIDIAN CARD)
+   PROFILE HERO SECTION
    ========================================================================== */
 .profile-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 28px 24px 20px;
+  padding: 30px 24px 22px;
   background: var(--bg-card);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
+  border: var(--border-subtle);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-floating);
   position: relative;
@@ -301,46 +218,18 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--grad-emerald-cyan);
+  background: linear-gradient(90deg, #10b981, #0ea5e9, #6366f1);
 }
 
-/* Holographic Avatar */
+/* Avatar Container (Clean, Elegant Frame) */
 .avatar-container {
   position: relative;
-  width: 132px;
-  height: 132px;
-  margin-bottom: 18px;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.cyber-ring-outer {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, transparent 0%, #00f5a0 30%, transparent 60%, #00d9f5 85%, transparent 100%);
-  animation: rotateRing 8s linear infinite;
-  opacity: 0.9;
-}
-
-.cyber-ring-inner {
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background: conic-gradient(from 180deg, transparent 0%, #ffd166 35%, transparent 70%, #8b5cf6 90%, transparent 100%);
-  animation: rotateRingRev 12s linear infinite;
-  opacity: 0.75;
-}
-
-@keyframes rotateRing {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes rotateRingRev {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
 }
 
 .avatar-image-wrapper {
@@ -349,51 +238,53 @@ body {
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  background: #192d3b;
-  border: 3px solid #06080d;
-  box-shadow: 0 0 24px rgba(0, 245, 160, 0.45);
+  background: #0d151d;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .avatar-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-smooth);
 }
 
 .avatar-container:hover .avatar-image {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .verified-badge {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  width: 28px;
-  height: 28px;
-  background: #06080d;
+  bottom: 2px;
+  right: 2px;
+  width: 26px;
+  height: 26px;
+  background: #0d151d;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  border: 2px solid #0d151d;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .verified-badge svg {
-  width: 22px;
-  height: 22px;
-  color: var(--neon-cyan);
+  width: 20px;
+  height: 20px;
+  color: var(--color-cyan);
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* Brand Typography */
 .brand-name {
   font-family: var(--font-heading);
-  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-size: clamp(1.8rem, 4vw, 2.25rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 30%, #a7f3d0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   margin-bottom: 2px;
   display: flex;
   align-items: center;
@@ -405,24 +296,24 @@ body {
   font-size: 0.85rem;
   font-weight: 600;
   color: #38bdf8;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   margin-bottom: 8px;
-  background: rgba(56, 189, 248, 0.12);
+  background: rgba(56, 189, 248, 0.1);
   padding: 3px 14px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   display: inline-block;
 }
 
 .brand-tagline {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
+  gap: 8px;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--neon-emerald);
+  color: var(--color-emerald-light);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   margin-bottom: 12px;
 }
 
@@ -432,7 +323,7 @@ body {
 }
 
 .brand-bio {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   color: #cbd5e1;
   max-width: 520px;
   margin: 0 auto 18px;
@@ -458,8 +349,8 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
@@ -468,15 +359,15 @@ body {
 }
 
 .chip:hover {
-  background: rgba(0, 245, 160, 0.12);
-  border-color: rgba(0, 245, 160, 0.35);
-  color: var(--neon-emerald);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .chip svg {
   width: 14px;
   height: 14px;
-  color: var(--neon-emerald);
+  color: var(--color-emerald-light);
+  flex-shrink: 0;
 }
 
 /* Metrics Strip */
@@ -486,7 +377,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: var(--border-subtle);
 }
 
 .metric-item {
@@ -500,9 +391,6 @@ body {
   font-size: 1.35rem;
   font-weight: 800;
   color: #ffffff;
-  background: var(--grad-emerald-cyan);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .metric-label {
@@ -514,53 +402,62 @@ body {
 }
 
 /* ==========================================================================
-   CATEGORY TABS (FILTERING)
+   CATEGORY TABS (MENU BAR — ROBUST, RESPONSIVE & NEVER CUT OFF)
    ========================================================================== */
 .category-tabs {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
-  overflow-x: auto;
-  padding: 4px 2px 10px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.category-tabs::-webkit-scrollbar {
-  display: none;
+  padding: 4px 0 10px;
+  width: 100%;
 }
 
 .tab-btn {
   flex-shrink: 0;
-  padding: 9px 18px;
-  background: rgba(10, 16, 30, 0.85);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: var(--bg-card);
+  border: var(--border-subtle);
   border-radius: var(--radius-full);
   color: #cbd5e1;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.tab-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.tab-btn span {
+  display: inline-block;
+  line-height: 1;
 }
 
 .tab-btn:hover {
-  background: rgba(16, 24, 44, 0.98);
+  background: var(--bg-card-hover);
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
 }
 
 .tab-btn.active {
-  background: var(--grad-emerald-cyan);
-  color: #06080d;
+  background: var(--color-emerald);
+  color: #06111a;
   font-weight: 800;
-  border-color: transparent;
-  box-shadow: 0 4px 18px rgba(0, 245, 160, 0.45);
+  border-color: var(--color-emerald);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
 /* ==========================================================================
@@ -578,37 +475,20 @@ body {
   display: block;
   text-decoration: none;
   background: var(--bg-card);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
+  border: var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: var(--shadow-floating);
+  box-shadow: var(--shadow-md);
   transition: all var(--transition-smooth);
   overflow: hidden;
   cursor: pointer;
 }
 
-.cyber-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-  transition: left 0.6s ease;
-}
-
-.cyber-card:hover::before {
-  left: 100%;
-}
-
 .cyber-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   background: var(--bg-card-hover);
-  border-color: rgba(0, 245, 160, 0.45);
-  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
 }
 
 .cyber-card:active {
@@ -620,32 +500,20 @@ body {
 }
 
 /* ==========================================================================
-   HERO / FEATURED PRODUCT CARD ("7 Dias de Rotinas Poderosas")
+   FEATURED HERO CARDS (LIVRO & ROTINAS)
    ========================================================================== */
 .hero-product-card {
-  background: linear-gradient(145deg, rgba(12, 22, 38, 0.96) 0%, rgba(8, 14, 26, 0.98) 100%);
-  border: 1px solid rgba(0, 245, 160, 0.45);
+  background: linear-gradient(145deg, #162433 0%, #101c28 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
 }
 
-.hero-product-card::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: var(--radius-lg);
-  padding: 1px;
-  background: var(--grad-hero-border);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0.85;
-  animation: borderShimmer 6s linear infinite;
+.book-hero-card {
+  border-left: 3px solid var(--color-amber);
 }
 
-@keyframes borderShimmer {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+.routine-hero-card {
+  border-left: 3px solid var(--color-emerald);
 }
 
 .card-top-badges {
@@ -662,39 +530,45 @@ body {
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   padding: 4px 10px;
   border-radius: var(--radius-full);
 }
 
+.badge-book {
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
 .badge-featured {
-  background: var(--grad-emerald-cyan);
-  color: #06080d;
-  box-shadow: 0 0 12px rgba(0, 245, 160, 0.45);
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
 }
 
 .badge-gold {
-  background: var(--grad-gold-amber);
-  color: #06080d;
-  box-shadow: 0 0 12px rgba(255, 209, 102, 0.45);
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
 }
 
 .badge-violet {
-  background: rgba(139, 92, 246, 0.25);
-  border: 1px solid rgba(139, 92, 246, 0.45);
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
   color: #c4b5fd;
 }
 
 .badge-cyan {
-  background: rgba(0, 217, 245, 0.2);
-  border: 1px solid rgba(0, 217, 245, 0.45);
-  color: var(--neon-cyan);
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  color: #38bdf8;
 }
 
 .badge-emerald {
-  background: rgba(0, 245, 160, 0.18);
-  border: 1px solid rgba(0, 245, 160, 0.45);
-  color: var(--neon-emerald);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
 }
 
 .rating-stars {
@@ -703,16 +577,17 @@ body {
   gap: 4px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--neon-gold);
+  color: var(--color-gold);
 }
 
 .rating-stars svg {
   width: 14px;
   height: 14px;
-  fill: var(--neon-gold);
+  fill: var(--color-gold);
+  flex-shrink: 0;
 }
 
-/* Hero Card Layout */
+/* Product Grid Layout */
 .hero-product-grid {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -723,22 +598,41 @@ body {
 .product-cover-box {
   position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #091017;
+}
+
+/* Square cover for course */
+.routine-cover-box {
+  aspect-ratio: 1/1;
+}
+
+/* Vertical 3D cover for Mariana Book */
+.book-cover-box {
+  aspect-ratio: 2/3;
+  max-height: 165px;
 }
 
 .product-cover-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-smooth);
 }
 
+.book-cover-img {
+  object-fit: contain;
+}
+
 .hero-product-card:hover .product-cover-img {
-  transform: scale(1.08) rotate(1deg);
+  transform: scale(1.05);
 }
 
 .product-info-box {
@@ -748,15 +642,23 @@ body {
 
 .product-title {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #ffffff;
   line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.book-tagline-sub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fbbf24;
   margin-bottom: 6px;
+  letter-spacing: 0.02em;
 }
 
 .product-desc {
-  font-size: 0.875rem;
+  font-size: 0.86rem;
   color: #cbd5e1;
   line-height: 1.45;
   margin-bottom: 12px;
@@ -766,8 +668,8 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 14px;
+  gap: 5px;
+  margin-bottom: 6px;
 }
 
 .product-features-list li {
@@ -781,10 +683,11 @@ body {
 .product-features-list li svg {
   width: 14px;
   height: 14px;
-  color: var(--neon-emerald);
+  color: var(--color-emerald-light);
   flex-shrink: 0;
 }
 
+/* Clean CTA Buttons */
 .card-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -792,28 +695,36 @@ body {
   gap: 8px;
   width: 100%;
   padding: 12px 20px;
-  background: var(--grad-emerald-cyan);
-  color: #06080d;
+  background: var(--grad-emerald-teal);
+  color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 0.92rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   border-radius: var(--radius-md);
   border: none;
-  box-shadow: 0 4px 16px rgba(0, 245, 160, 0.45);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
   transition: all var(--transition-smooth);
+  margin-top: 14px;
+}
+
+.cta-btn-amber {
+  background: var(--grad-amber-gold);
+  color: #0d151d;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
 
 .card-cta-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
   transition: transform var(--transition-fast);
 }
 
 .hero-product-card:hover .card-cta-btn {
-  box-shadow: 0 6px 24px rgba(0, 245, 160, 0.65);
-  filter: brightness(1.05);
+  filter: brightness(1.08);
 }
 
 .hero-product-card:hover .card-cta-btn svg {
@@ -821,7 +732,7 @@ body {
 }
 
 /* ==========================================================================
-   STANDARD CYBER LINKS
+   STANDARD LINKS CARDS
    ========================================================================== */
 .standard-card {
   display: flex;
@@ -831,8 +742,8 @@ body {
 }
 
 .card-icon-wrapper {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -842,37 +753,38 @@ body {
 }
 
 .standard-card:hover .card-icon-wrapper {
-  transform: scale(1.1) rotate(-3deg);
+  transform: scale(1.08);
 }
 
 .icon-substack {
-  background: rgba(255, 103, 25, 0.18);
-  border: 1px solid rgba(255, 103, 25, 0.4);
+  background: rgba(255, 103, 25, 0.15);
+  border: 1px solid rgba(255, 103, 25, 0.35);
   color: #ff6719;
 }
 
 .icon-tiktok {
-  background: rgba(0, 242, 234, 0.15);
-  border: 1px solid rgba(254, 44, 85, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
 .icon-whatsapp {
-  background: rgba(37, 211, 102, 0.18);
-  border: 1px solid rgba(37, 211, 102, 0.45);
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.35);
   color: #25d366;
 }
 
 .icon-course {
-  background: rgba(139, 92, 246, 0.18);
-  border: 1px solid rgba(139, 92, 246, 0.45);
-  color: var(--neon-violet);
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #a78bfa;
 }
 
 .card-icon-wrapper svg {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 .card-content {
@@ -912,8 +824,8 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -925,14 +837,14 @@ body {
 .card-action-arrow svg {
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
   transition: transform var(--transition-fast);
 }
 
 .standard-card:hover .card-action-arrow {
-  background: var(--neon-emerald);
-  border-color: var(--neon-emerald);
-  color: #06080d;
-  box-shadow: 0 0 14px rgba(0, 245, 160, 0.55);
+  background: var(--color-emerald);
+  border-color: var(--color-emerald);
+  color: #06111a;
 }
 
 .standard-card:hover .card-action-arrow svg {
@@ -944,13 +856,11 @@ body {
    ========================================================================== */
 .newsletter-box {
   background: var(--bg-card);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(0, 217, 245, 0.35);
+  border: var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 24px;
   text-align: center;
-  box-shadow: var(--shadow-floating);
+  box-shadow: var(--shadow-md);
   position: relative;
 }
 
@@ -975,8 +885,8 @@ body {
 
 .newsletter-input {
   flex: 1;
-  background: rgba(6, 8, 13, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #091017;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   padding: 12px 16px;
   color: #ffffff;
@@ -986,12 +896,11 @@ body {
 }
 
 .newsletter-input:focus {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 12px rgba(0, 217, 245, 0.35);
+  border-color: var(--color-cyan);
 }
 
 .newsletter-btn {
-  background: var(--grad-violet-cyan);
+  background: var(--grad-violet-indigo);
   border: none;
   color: #ffffff;
   font-family: var(--font-heading);
@@ -1005,13 +914,16 @@ body {
   transition: var(--transition-smooth);
 }
 
+.newsletter-btn svg {
+  flex-shrink: 0;
+}
+
 .newsletter-btn:hover {
-  filter: brightness(1.15);
-  box-shadow: 0 0 16px rgba(0, 217, 245, 0.45);
+  filter: brightness(1.1);
 }
 
 /* ==========================================================================
-   SOCIAL FOOTER DOCK & COPYRIGHT (FOR LIGHT BACKGROUND)
+   SOCIAL FOOTER DOCK & COPYRIGHT
    ========================================================================== */
 .footer-section {
   display: flex;
@@ -1029,32 +941,32 @@ body {
 }
 
 .social-dock-btn {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(10, 16, 30, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bg-card);
+  border: var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #cbd5e1;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-smooth);
 }
 
 .social-dock-btn:hover {
   color: #ffffff;
-  transform: translateY(-4px) scale(1.1);
-  background: rgba(0, 245, 160, 0.25);
-  border-color: var(--neon-emerald);
-  box-shadow: 0 0 16px rgba(0, 245, 160, 0.45);
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .social-dock-btn svg {
   width: 20px;
   height: 20px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 .footer-copy {
@@ -1066,18 +978,13 @@ body {
   color: var(--text-dark);
 }
 
-.footer-copy a {
-  color: #0284c7;
-  text-decoration: none;
-}
-
 /* ==========================================================================
    MODALS (SHARE & QR CODE)
    ========================================================================== */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(7, 12, 18, 0.75);
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
@@ -1097,13 +1004,13 @@ body {
 .modal-card {
   width: 100%;
   max-width: 420px;
-  background: #0d121d;
-  border: 1px solid rgba(0, 245, 160, 0.35);
+  background: #131f2b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-xl);
   padding: 24px;
-  box-shadow: var(--shadow-floating), 0 0 30px rgba(0, 245, 160, 0.25);
-  transform: scale(0.92);
-  transition: transform var(--transition-bounce);
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.94);
+  transition: transform var(--transition-smooth);
   position: relative;
 }
 
@@ -1120,6 +1027,7 @@ body {
   color: var(--text-muted);
   cursor: pointer;
   padding: 4px;
+  font-size: 1.1rem;
 }
 
 .modal-close-btn:hover {
@@ -1165,7 +1073,7 @@ body {
 
 .share-input {
   flex: 1;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   padding: 10px 14px;
@@ -1175,9 +1083,9 @@ body {
 }
 
 .share-copy-btn {
-  background: var(--grad-emerald-cyan);
+  background: var(--color-emerald);
   border: none;
-  color: #06080d;
+  color: #06111a;
   font-weight: 800;
   padding: 10px 16px;
   border-radius: var(--radius-md);
@@ -1186,7 +1094,7 @@ body {
 }
 
 .share-copy-btn:hover {
-  box-shadow: 0 0 12px rgba(0, 245, 160, 0.5);
+  filter: brightness(1.1);
 }
 
 /* Toast Notifications */
@@ -1195,8 +1103,8 @@ body {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(100px);
-  background: #0d121d;
-  border: 1px solid var(--neon-emerald);
+  background: #162433;
+  border: 1px solid var(--color-emerald);
   color: #ffffff;
   padding: 10px 20px;
   border-radius: var(--radius-full);
@@ -1205,7 +1113,7 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   z-index: 2000;
   opacity: 0;
-  transition: all var(--transition-bounce);
+  transition: all var(--transition-smooth);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1217,7 +1125,49 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (MOBILE & TABLET)
+   FLOATING WHATSAPP BUTTON (CLEAN & PROMINENT)
+   ========================================================================== */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(37, 211, 102, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-smooth);
+}
+
+.floating-whatsapp-btn:hover {
+  transform: translateY(-2px);
+  background: #20ba5a;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 6px 14px rgba(37, 211, 102, 0.35);
+  color: #ffffff;
+}
+
+.floating-whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+.floating-whatsapp-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLETS)
    ========================================================================== */
 @media (max-width: 580px) {
   body {
@@ -1229,22 +1179,38 @@ body {
   }
 
   .profile-hero {
-    padding: 20px 14px 16px;
+    padding: 22px 14px 16px;
     border-radius: var(--radius-lg);
   }
 
   .avatar-container {
-    width: 112px;
-    height: 112px;
-    margin-bottom: 14px;
+    width: 104px;
+    height: 104px;
+    margin-bottom: 12px;
   }
 
   .brand-name {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
   }
 
   .brand-bio {
     font-size: 0.875rem;
+  }
+
+  .category-tabs {
+    gap: 6px;
+    padding: 2px 0 8px;
+  }
+
+  .tab-btn {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    gap: 5px;
+  }
+
+  .tab-btn svg {
+    width: 14px;
+    height: 14px;
   }
 
   .hero-product-grid {
@@ -1252,8 +1218,13 @@ body {
     gap: 14px;
   }
 
-  .product-cover-box {
-    max-width: 160px;
+  .book-cover-box {
+    max-width: 130px;
+    margin: 0 auto;
+  }
+
+  .routine-cover-box {
+    max-width: 150px;
     margin: 0 auto;
   }
 
@@ -1271,13 +1242,13 @@ body {
   }
 
   .card-icon-wrapper {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
   }
 
   .card-icon-wrapper svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 
   .newsletter-form {
@@ -1285,70 +1256,14 @@ body {
   }
 
   .floating-whatsapp-btn {
-    bottom: 18px;
-    right: 18px;
+    bottom: 16px;
+    right: 16px;
     padding: 10px 16px;
     font-size: 0.85rem;
   }
 
   .floating-whatsapp-btn svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
-}
-
-/* ==========================================================================
-   FLOATING WHATSAPP BUTTON (CONVERSION GLOW)
-   ========================================================================== */
-.floating-whatsapp-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #ffffff;
-  padding: 12px 20px;
-  border-radius: var(--radius-full);
-  text-decoration: none;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
-  box-shadow: 0 10px 30px -4px rgba(37, 211, 102, 0.5), 0 0 20px rgba(37, 211, 102, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all var(--transition-smooth);
-}
-
-.floating-whatsapp-btn:hover {
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 16px 36px -4px rgba(37, 211, 102, 0.75), 0 0 32px rgba(37, 211, 102, 0.55);
-  color: #ffffff;
-}
-
-.floating-whatsapp-btn:active {
-  transform: translateY(-1px) scale(1.02);
-}
-
-.floating-whatsapp-btn .whatsapp-pulse {
-  position: absolute;
-  inset: -4px;
-  border-radius: var(--radius-full);
-  border: 2px solid #25d366;
-  animation: waPulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  pointer-events: none;
-}
-
-@keyframes waPulse {
-  0% { transform: scale(0.96); opacity: 0.9; }
-  100% { transform: scale(1.3); opacity: 0; }
-}
-
-.floating-whatsapp-btn svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-  flex-shrink: 0;
 }
